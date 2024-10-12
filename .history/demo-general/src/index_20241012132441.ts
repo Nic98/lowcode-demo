@@ -49,8 +49,6 @@ async function registerPlugins() {
   });
 
   // 设置内置 setter 和事件绑定、插件绑定面板
-  await plugins.register(DemoPlugin);
-
   await plugins.register(DefaultSettersRegistryPlugin);
 
   await plugins.register(LogoSamplePlugin);

@@ -40,7 +40,7 @@
   },
   "plugins": [
     [
-      "build-plugin-react-app",
+      "build-plugin-react-app"
       {
         "inject": true
       }

@@ -40,10 +40,8 @@
   },
   "plugins": [
     [
-      "build-plugin-react-app",
-      {
-        "inject": true
-      }
+      "build-plugin-react-app"
+      {}
     ],
     [
       "build-plugin-moment-locales",

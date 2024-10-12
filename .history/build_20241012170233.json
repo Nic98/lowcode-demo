@@ -42,6 +42,7 @@
     [
       "build-plugin-react-app",
       {
+        type:
         "inject": true
       }
     ],
