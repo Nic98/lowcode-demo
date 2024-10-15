@@ -9,26 +9,6 @@
       "library": "moment"
     },
     {
-      "package": "form-table-rubber",
-      "version": "0.1.0",
-      "library": "BizComp",
-      "urls": [
-        "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/render/default/view.js",
-        "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/render/default/view.css"
-      ],
-      "editUrls": [
-        "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/view.js",
-        "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/view.css"
-      ],
-      "advancedUrls": {
-        "default": [
-          "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/render/default/view.js",
-          "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/render/default/view.css"
-        ]
-      },
-      "advancedEditUrls": {}
-    },
-    {
       "package": "lodash",
       "library": "_",
       "urls": [
@@ -96,22 +76,6 @@
     }
   ],
   "components": [
-    {
-      "exportName": "FormTableRubberMeta",
-      "npm": {
-        "package": "form-table-rubber",
-        "version": "0.1.0"
-      },
-      "url": "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/meta.js",
-      "urls": {
-        "default": "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/meta.js"
-      },
-      "advancedUrls": {
-        "default": [
-          "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/meta.js"
-        ]
-      }
-    },
     {
       "exportName": "AlilcLowcodeMaterialsMeta",
       "npm": {

@@ -111,7 +111,7 @@
           "https://unpkg.com/form-table-rubber@0.1.0/build/lowcode/meta.js"
         ]
       }
-    },
+    }，
     {
       "exportName": "AlilcLowcodeMaterialsMeta",
       "npm": {
