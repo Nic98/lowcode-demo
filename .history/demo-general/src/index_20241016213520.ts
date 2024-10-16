@@ -105,8 +105,7 @@ async function registerPlugins() {
 
 (async function main() {
   await registerPlugins();
-  
-  // 加载设计器
+  //
   const src = 'https://alifd.alicdn.com/npm/@alifd/pro-layout@1.0.1-beta.5/build/lowcode/meta.js'
   const script = document.createElement('script')
   script.src = src

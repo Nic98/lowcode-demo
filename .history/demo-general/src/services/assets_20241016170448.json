@@ -87,21 +87,21 @@
       "advancedEditUrls": {}
     },
     {
-      "package": "material-table-rubber",
-      "version": "0.1.0",
+      "package": "form-table-rubber",
+      "version": "0.1.4",
       "library": "BizComp",
       "urls": [
-        "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/render/default/view.js",
-        "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/render/default/view.css"
+        "https://unpkg.com/form-table-rubber@0.1.4/build/lowcode/render/default/view.js",
+        "https://unpkg.com/form-table-rubber@0.1.4/build/lowcode/render/default/view.css"
       ],
       "editUrls": [
-        "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/view.js",
-        "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/view.css"
+        "https://unpkg.com/form-table-rubber@0.1.4/build/lowcode/view.js",
+        "https://unpkg.com/form-table-rubber@0.1.4/build/lowcode/view.css"
       ],
       "advancedUrls": {
         "default": [
-          "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/render/default/view.js",
-          "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/render/default/view.css"
+          "https://unpkg.com/form-table-rubber@0.1.4/build/lowcode/render/default/view.js",
+          "https://unpkg.com/form-table-rubber@0.1.4/build/lowcode/render/default/view.css"
         ]
       },
       "advancedEditUrls": {}
@@ -158,18 +158,18 @@
       }
     },
     {
-      "exportName": "MaterialTableRubberMeta",
+      "exportName": "FormTableRubberMeta",
       "npm": {
-        "package": "material-table-rubber",
-        "version": "0.1.0"
+        "package": "form-table-rubber",
+        "version": "0.1.4"
       },
-      "url": "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/meta.js",
+      "url": "https://unpkg.com/form-table-rubber@0.1.4/build/lowcode/meta.js",
       "urls": {
-        "default": "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/meta.js"
+        "default": "https://unpkg.com/form-table-rubber@0.1.4/build/lowcode/meta.js"
       },
       "advancedUrls": {
         "default": [
-          "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/meta.js"
+          "https://unpkg.com/form-table-rubber@0.1.4/build/lowcode/meta.js"
         ]
       }
     }

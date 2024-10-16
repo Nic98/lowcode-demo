@@ -31,7 +31,8 @@
     "@alilc/lowcode-react-renderer": "^1.1.2",
     "@alilc/lowcode-setter-behavior": "^1.0.0",
     "@alilc/lowcode-setter-title": "^1.0.2",
-    "antd": "^4.21.4",
+    "antd": "^5.21.4",
+    "form-table-rubber": "^0.1.1",
     "moment": "^2.29.3",
     "registry.npmjs.org": "^1.0.1",
     "uuid": "^8.3.2"
