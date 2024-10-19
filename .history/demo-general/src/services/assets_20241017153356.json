@@ -67,30 +67,44 @@
       ]
     },
     {
-      "package": "material-table-rubber",
-      "version": "0.1.0",
-      "library": "BizCompMaterial",
-      "urls": [
-        "http://localhost:3334/build/lowcode/render/default/view.js",
-        "http://localhost:3334/build/lowcode/render/default/view.css"
-      ],
-      "editUrls": [
-        "http://localhost:3334/build/lowcode/view.js",
-        "http://localhost:3334/build/lowcode/view.css"
-      ]
-    },
-    {
       "package": "form-table-rubber",
       "version": "0.1.4",
-      "library": "BizCompForm",
+      "library": "BizComp",
       "urls": [
-        "http://localhost:3333/build/lowcode/render/default/view.js",
-        "http://localhost:3333/build/lowcode/render/default/view.css"
+        "http://localhost:3333/form-table-rubber@0.1.4/build/lowcode/render/default/view.js",
+        "http://localhost:3333/form-table-rubber@0.1.4/build/lowcode/render/default/view.css"
       ],
       "editUrls": [
-        "http://localhost:3333/build/lowcode/view.js",
-        "http://localhost:3333/build/lowcode/view.css"
-      ]
+        "http://localhost:3333/form-table-rubber@0.1.4/build/lowcode/view.js",
+        "http://localhost:3333/form-table-rubber@0.1.4/build/lowcode/view.css"
+      ],
+      "advancedUrls": {
+        "default": [
+          "http://localhost:3333/form-table-rubber@0.1.4/build/lowcode/render/default/view.js",
+          "http://localhost:3333/form-table-rubber@0.1.4/build/lowcode/render/default/view.css"
+        ]
+      },
+      "advancedEditUrls": {}
+    },
+    {
+      "package": "material-table-rubber",
+      "version": "0.1.0",
+      "library": "BizComp",
+      "urls": [
+        "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/render/default/view.js",
+        "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/render/default/view.css"
+      ],
+      "editUrls": [
+        "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/view.js",
+        "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/view.css"
+      ],
+      "advancedUrls": {
+        "default": [
+          "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/render/default/view.js",
+          "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/render/default/view.css"
+        ]
+      },
+      "advancedEditUrls": {}
     }
   ],
   "components": [
@@ -127,26 +141,36 @@
         "design": "https://alifd.alicdn.com/npm/@alifd/fusion-ui@2.0.2/build/lowcode/meta.design.js"
       }
     },
+    // {
+    //   "exportName": "FormTableRubberMeta",
+    //   "npm": {
+    //     "package": "form-table-rubber",
+    //     "version": "0.1.4"
+    //   },
+    //   "url": "http://localhost:3333/form-table-rubber@0.1.4/build/lowcode/meta.js",
+    //   "urls": {
+    //     "default": "http://localhost:3333/form-table-rubber@0.1.4/build/lowcode/meta.js"
+    //   },
+    //   "advancedUrls": {
+    //     "default": [
+    //       "http://localhost:3333/form-table-rubber@0.1.4/build/lowcode/meta.js"
+    //     ]
+    //   }
+    // },
     {
       "exportName": "MaterialTableRubberMeta",
       "npm": {
         "package": "material-table-rubber",
         "version": "0.1.0"
       },
-      "url": "http://localhost:3334/build/lowcode/meta.js",
+      "url": "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/meta.js",
       "urls": {
-        "default": "http://localhost:3334/build/lowcode/meta.js"
-      }
-    },
-    {
-      "exportName": "FormTableRubberMeta",
-      "npm": {
-        "package": "form-table-rubber",
-        "version": "0.1.4"
+        "default": "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/meta.js"
       },
-      "url": "http://localhost:3333/build/lowcode/meta.js",
-      "urls": {
-        "default": "http://localhost:3333/build/lowcode/meta.js"
+      "advancedUrls": {
+        "default": [
+          "https://unpkg.com/material-table-rubber@0.1.0/build/lowcode/meta.js"
+        ]
       }
     }
   ],

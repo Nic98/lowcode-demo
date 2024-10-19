@@ -69,7 +69,7 @@
     {
       "package": "material-table-rubber",
       "version": "0.1.0",
-      "library": "BizCompMaterial",
+      "library": "MaterialBizComp",
       "urls": [
         "http://localhost:3334/build/lowcode/render/default/view.js",
         "http://localhost:3334/build/lowcode/render/default/view.css"

@@ -14,6 +14,7 @@ const generateProjectSchema = (pageSchema: any, i18nSchema: any): IPublicTypePro
   };
 }
 
+
 export const saveSchema = async (scenarioName: string = 'unknown') => {
   setProjectSchemaToLocalStorage(scenarioName);
   await setPackagesToLocalStorage(scenarioName);

@@ -65,11 +65,12 @@
         "https://alifd.alicdn.com/npm/@alifd/fusion-ui@2.0.2/build/lowcode/view.js",
         "https://alifd.alicdn.com/npm/@alifd/fusion-ui@2.0.2/build/lowcode/view.css"
       ]
-    },
+    }
+    ,
     {
       "package": "material-table-rubber",
       "version": "0.1.0",
-      "library": "BizCompMaterial",
+      "library": "BizComp",
       "urls": [
         "http://localhost:3334/build/lowcode/render/default/view.js",
         "http://localhost:3334/build/lowcode/render/default/view.css"
@@ -77,12 +78,19 @@
       "editUrls": [
         "http://localhost:3334/build/lowcode/view.js",
         "http://localhost:3334/build/lowcode/view.css"
-      ]
-    },
+      ],
+      "advancedUrls": {
+        "default": [
+          "http://localhost:3334/build/lowcode/render/default/view.js",
+          "http://localhost:3334/build/lowcode/render/default/view.css"
+        ]
+      },
+      "advancedEditUrls": {}
+    }
     {
       "package": "form-table-rubber",
       "version": "0.1.4",
-      "library": "BizCompForm",
+      "library": "BizComp",
       "urls": [
         "http://localhost:3333/build/lowcode/render/default/view.js",
         "http://localhost:3333/build/lowcode/render/default/view.css"
@@ -90,7 +98,14 @@
       "editUrls": [
         "http://localhost:3333/build/lowcode/view.js",
         "http://localhost:3333/build/lowcode/view.css"
-      ]
+      ],
+      "advancedUrls": {
+        "default": [
+          "http://localhost:3333/build/lowcode/render/default/view.js",
+          "http://localhost:3333/build/lowcode/render/default/view.css"
+        ]
+      },
+      "advancedEditUrls": {}
     }
   ],
   "components": [
@@ -128,17 +143,6 @@
       }
     },
     {
-      "exportName": "MaterialTableRubberMeta",
-      "npm": {
-        "package": "material-table-rubber",
-        "version": "0.1.0"
-      },
-      "url": "http://localhost:3334/build/lowcode/meta.js",
-      "urls": {
-        "default": "http://localhost:3334/build/lowcode/meta.js"
-      }
-    },
-    {
       "exportName": "FormTableRubberMeta",
       "npm": {
         "package": "form-table-rubber",
@@ -147,6 +151,11 @@
       "url": "http://localhost:3333/build/lowcode/meta.js",
       "urls": {
         "default": "http://localhost:3333/build/lowcode/meta.js"
+      },
+      "advancedUrls": {
+        "default": [
+          "http://localhost:3333/build/lowcode/meta.js"
+        ]
       }
     }
   ],

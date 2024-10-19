@@ -82,7 +82,7 @@
     {
       "package": "form-table-rubber",
       "version": "0.1.4",
-      "library": "BizCompForm",
+      "library": "BizCompMaterial",
       "urls": [
         "http://localhost:3333/build/lowcode/render/default/view.js",
         "http://localhost:3333/build/lowcode/render/default/view.css"

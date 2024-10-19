@@ -23,7 +23,7 @@ const getScenarioName = function () {
 
 const SamplePreview = () => {
   const [data, setData] = useState({});
-  // const [schema, setSchema] = useState({});
+  const [schema, setComponents] = useState({});
 
   async function init() {
     const scenarioName = getScenarioName();
