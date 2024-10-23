@@ -101,13 +101,11 @@ export const getPackagesFromLocalStorage = (scenarioName: string) => {
   return JSON.parse(window.localStorage.getItem(getLSName(scenarioName, 'packages')) || '{}');
 }
 
-// done
 export const getProjectSchema = async (scenarioName: string = 'unknown') : Promise<IPublicTypeProjectSchema> => {
   const pageSchema = await getPageSchema(scenarioName);
   return generateProjectSchema(pageSchema, DefaultI18nSchema);
 };
 
-// done
 export const getPageSchema = async (scenarioName: string = 'unknown') => {
   // const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   const pageSchema = (await getProjectSchemaFromLocalStorage(scenarioName))?.componentsTree?.[0];
@@ -121,7 +119,6 @@ export const getPageSchema = async (scenarioName: string = 'unknown') => {
 
 export const getPreviewLocale = (scenarioName: string) => {
   const key = getLSName(scenarioName, 'previewLocale');
-  console.log("key", key);
   return window.localStorage.getItem(key) || 'zh-CN';
 }
 

@@ -7,7 +7,7 @@ import DefaultI18nSchema from './defaultI18nSchema.json';
 import { getProjectSchemaFromDB, updateProjectSchemaToDB } from './schemaServices';
 import { stringify } from 'uuid';
 
-// done
+
 const generateProjectSchema = (pageSchema: any, i18nSchema: any): IPublicTypeProjectSchema => {
   return {
     componentsTree: [pageSchema],
@@ -51,7 +51,6 @@ export const resetSchema = async (scenarioName: string = 'unknown') => {
   Message.success('成功重置页面');
 }
 
-// done
 const getLSName = (scenarioName: string, ns: string = 'projectSchema') => `${scenarioName}:${ns}`;
 
 // done
@@ -101,13 +100,11 @@ export const getPackagesFromLocalStorage = (scenarioName: string) => {
   return JSON.parse(window.localStorage.getItem(getLSName(scenarioName, 'packages')) || '{}');
 }
 
-// done
 export const getProjectSchema = async (scenarioName: string = 'unknown') : Promise<IPublicTypeProjectSchema> => {
   const pageSchema = await getPageSchema(scenarioName);
   return generateProjectSchema(pageSchema, DefaultI18nSchema);
 };
 
-// done
 export const getPageSchema = async (scenarioName: string = 'unknown') => {
   // const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   const pageSchema = (await getProjectSchemaFromLocalStorage(scenarioName))?.componentsTree?.[0];
@@ -121,7 +118,6 @@ export const getPageSchema = async (scenarioName: string = 'unknown') => {
 
 export const getPreviewLocale = (scenarioName: string) => {
   const key = getLSName(scenarioName, 'previewLocale');
-  console.log("key", key);
   return window.localStorage.getItem(key) || 'zh-CN';
 }
 

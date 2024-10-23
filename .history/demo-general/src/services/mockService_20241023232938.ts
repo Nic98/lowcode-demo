@@ -121,7 +121,6 @@ export const getPageSchema = async (scenarioName: string = 'unknown') => {
 
 export const getPreviewLocale = (scenarioName: string) => {
   const key = getLSName(scenarioName, 'previewLocale');
-  console.log("key", key);
   return window.localStorage.getItem(key) || 'zh-CN';
 }
 

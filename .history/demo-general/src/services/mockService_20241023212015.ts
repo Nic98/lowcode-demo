@@ -4,10 +4,9 @@ import { Message, Dialog } from '@alifd/next';
 import { IPublicTypeProjectSchema, IPublicEnumTransformStage } from '@alilc/lowcode-types';
 import DefaultPageSchema from './defaultPageSchema.json';
 import DefaultI18nSchema from './defaultI18nSchema.json';
-import { getProjectSchemaFromDB, updateProjectSchemaToDB } from './schemaServices';
-import { stringify } from 'uuid';
+import { }
 
-// done
+
 const generateProjectSchema = (pageSchema: any, i18nSchema: any): IPublicTypeProjectSchema => {
   return {
     componentsTree: [pageSchema],
@@ -17,14 +16,12 @@ const generateProjectSchema = (pageSchema: any, i18nSchema: any): IPublicTypePro
   };
 }
 
-// done
 export const saveSchema = async (scenarioName: string = 'unknown') => {
   setProjectSchemaToLocalStorage(scenarioName);
   await setPackagesToLocalStorage(scenarioName);
-  Message.success('成功保存到数据库');
+  Message.success('成功保存到本地');
 };
 
-// done
 export const resetSchema = async (scenarioName: string = 'unknown') => {
   try {
     await new Promise<void>((resolve, reject) => {
@@ -51,34 +48,29 @@ export const resetSchema = async (scenarioName: string = 'unknown') => {
   Message.success('成功重置页面');
 }
 
-// done
 const getLSName = (scenarioName: string, ns: string = 'projectSchema') => `${scenarioName}:${ns}`;
 
-// done
-export const getProjectSchemaFromLocalStorage = async (scenarioName: string): Promise<any> => {
+export const getProjectSchemaFromLocalStorage = (scenarioName: string) => {
   if (!scenarioName) {
     console.error('scenarioName is required!');
     return;
   }
-  // const localValue = window.localStorage.getItem(getLSName(scenarioName));
-  const localValue = await getProjectSchemaFromDB(scenarioName);
-  console.log(localValue);
+  const localValue = window.localStorage.getItem(getLSName(scenarioName));
   if (localValue) {
-    return localValue[0].content as any; // Type assertion
+    return JSON.parse(localValue);
   }
   return undefined;
 }
-// done
+
 const setProjectSchemaToLocalStorage = (scenarioName: string) => {
   if (!scenarioName) {
     console.error('scenarioName is required!');
     return;
   }
-  // window.localStorage.setItem(
-  //   getLSName(scenarioName),
-  //   JSON.stringify(project.exportSchema(IPublicEnumTransformStage.Save))
-  // );
-  updateProjectSchemaToDB(scenarioName, project.exportSchema(IPublicEnumTransformStage.Save));
+  window.localStorage.setItem(
+    getLSName(scenarioName),
+    JSON.stringify(project.exportSchema(IPublicEnumTransformStage.Save))
+  );
 }
 
 const setPackagesToLocalStorage = async (scenarioName: string) => {
@@ -101,17 +93,13 @@ export const getPackagesFromLocalStorage = (scenarioName: string) => {
   return JSON.parse(window.localStorage.getItem(getLSName(scenarioName, 'packages')) || '{}');
 }
 
-// done
 export const getProjectSchema = async (scenarioName: string = 'unknown') : Promise<IPublicTypeProjectSchema> => {
   const pageSchema = await getPageSchema(scenarioName);
   return generateProjectSchema(pageSchema, DefaultI18nSchema);
 };
 
-// done
 export const getPageSchema = async (scenarioName: string = 'unknown') => {
-  // const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
-  const pageSchema = (await getProjectSchemaFromLocalStorage(scenarioName))?.componentsTree?.[0];
-
+  const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   if (pageSchema) {
     return pageSchema;
   }
@@ -121,7 +109,6 @@ export const getPageSchema = async (scenarioName: string = 'unknown') => {
 
 export const getPreviewLocale = (scenarioName: string) => {
   const key = getLSName(scenarioName, 'previewLocale');
-  console.log("key", key);
   return window.localStorage.getItem(key) || 'zh-CN';
 }
 

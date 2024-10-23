@@ -107,7 +107,6 @@ export const getProjectSchema = async (scenarioName: string = 'unknown') : Promi
   return generateProjectSchema(pageSchema, DefaultI18nSchema);
 };
 
-// done
 export const getPageSchema = async (scenarioName: string = 'unknown') => {
   // const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   const pageSchema = (await getProjectSchemaFromLocalStorage(scenarioName))?.componentsTree?.[0];
@@ -121,7 +120,6 @@ export const getPageSchema = async (scenarioName: string = 'unknown') => {
 
 export const getPreviewLocale = (scenarioName: string) => {
   const key = getLSName(scenarioName, 'previewLocale');
-  console.log("key", key);
   return window.localStorage.getItem(key) || 'zh-CN';
 }
 
