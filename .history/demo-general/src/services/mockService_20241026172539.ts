@@ -61,10 +61,10 @@ export const getProjectSchemaFromLocalStorage = async (scenarioName: string): Pr
     return;
   }
   // const localValue = window.localStorage.getItem(getLSName(scenarioName));
-  const localValue = JSON.parse(await getProjectSchemaFromDB(scenarioName));
+  const localValue = await getProjectSchemaFromDB(scenarioName);
   
   if (localValue) {
-    return localValue as Object; // Type assertion
+    return localValue as any; // Type assertion
   }
   return undefined;
 }
@@ -104,6 +104,7 @@ export const getPackagesFromLocalStorage = (scenarioName: string) => {
 // done
 export const getProjectSchema = async (scenarioName: string = 'unknown') : Promise<IPublicTypeProjectSchema> => {
   const pageSchema = await getPageSchema(scenarioName);
+  console.log("pageSchema", pageSchema);
   return generateProjectSchema(pageSchema, DefaultI18nSchema);
 };
 
@@ -111,10 +112,9 @@ export const getProjectSchema = async (scenarioName: string = 'unknown') : Promi
 export const getPageSchema = async (scenarioName: string = 'unknown') => {
   // const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   
-  const pageSchema = await getProjectSchemaFromLocalStorage(scenarioName);
-
+  const pageSchema = JSON.parse(await getProjectSchemaFromLocalStorage(scenarioName))?.componentsTree?.[0];
   if (pageSchema) {
-    return pageSchema.componentsTree[0];
+    return pageSchema;
   }
 
   return DefaultPageSchema;

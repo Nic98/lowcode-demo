@@ -22,6 +22,7 @@ export const updateProjectSchemaToDB = async (name, data) => {
   }
 
   const componentsTree = data.componentsTree;
+  console.log('componentsTree:', componentsTree[0].docId);
   const dataWithKey = {
     pageId: componentsTree[0].docId,
     pageName: name,

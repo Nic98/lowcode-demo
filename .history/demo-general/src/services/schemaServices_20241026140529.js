@@ -8,8 +8,7 @@ const API_URL_POST = 'http://localhost:3000/projectSchema/save';
 export const getProjectSchemaFromDB = async (data) => {
   try {
     const response = await axios.get(API_URL_GET, data);
-    const resdata = response.data.data;
-    return resdata[0].projectSchema;
+    return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;

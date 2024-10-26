@@ -15,6 +15,7 @@ const EditorInitPlugin = (ctx: IPublicModelPluginContext, options: any) => {
       config.set('scenarioInfo', scenarioInfo);
 
       // 设置物料描述
+
       await material.setAssets(await injectAssets(assets));
 
       const schema = await getProjectSchema(scenarioName);

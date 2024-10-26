@@ -112,9 +112,9 @@ export const getPageSchema = async (scenarioName: string = 'unknown') => {
   // const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   
   const pageSchema = await getProjectSchemaFromLocalStorage(scenarioName);
-
+  console.log(pageSchema);
   if (pageSchema) {
-    return pageSchema.componentsTree[0];
+    return pageSchema;
   }
 
   return DefaultPageSchema;

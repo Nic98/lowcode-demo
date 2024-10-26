@@ -64,7 +64,7 @@ export const getProjectSchemaFromLocalStorage = async (scenarioName: string): Pr
   const localValue = JSON.parse(await getProjectSchemaFromDB(scenarioName));
   
   if (localValue) {
-    return localValue as Object; // Type assertion
+    return localValue as any; // Type assertion
   }
   return undefined;
 }
@@ -104,17 +104,17 @@ export const getPackagesFromLocalStorage = (scenarioName: string) => {
 // done
 export const getProjectSchema = async (scenarioName: string = 'unknown') : Promise<IPublicTypeProjectSchema> => {
   const pageSchema = await getPageSchema(scenarioName);
+  console.log("pageSchema", pageSchema);
   return generateProjectSchema(pageSchema, DefaultI18nSchema);
 };
 
 // done
 export const getPageSchema = async (scenarioName: string = 'unknown') => {
-  // const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
+  const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   
-  const pageSchema = await getProjectSchemaFromLocalStorage(scenarioName);
-
+  // const pageSchema = await getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   if (pageSchema) {
-    return pageSchema.componentsTree[0];
+    return pageSchema;
   }
 
   return DefaultPageSchema;

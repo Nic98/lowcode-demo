@@ -8,8 +8,7 @@ const API_URL_POST = 'http://localhost:3000/projectSchema/save';
 export const getProjectSchemaFromDB = async (data) => {
   try {
     const response = await axios.get(API_URL_GET, data);
-    const resdata = response.data.data;
-    return resdata[0].projectSchema;
+    return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);
     throw error;
@@ -21,11 +20,10 @@ export const updateProjectSchemaToDB = async (name, data) => {
     throw new Error('Invalid project schema');
   }
 
-  const componentsTree = data.componentsTree;
   const dataWithKey = {
-    pageId: componentsTree[0].docId,
+    pageId: data[0]._id
     pageName: name,
-    projectSchema: JSON.stringify(data),
+    ProjectSchema: data,
   }
   
   try {

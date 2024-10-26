@@ -61,10 +61,9 @@ export const getProjectSchemaFromLocalStorage = async (scenarioName: string): Pr
     return;
   }
   // const localValue = window.localStorage.getItem(getLSName(scenarioName));
-  const localValue = JSON.parse(await getProjectSchemaFromDB(scenarioName));
-  
+  const localValue = await getProjectSchemaFromDB(scenarioName);
   if (localValue) {
-    return localValue as Object; // Type assertion
+    return localValue as any; // Type assertion
   }
   return undefined;
 }
@@ -111,10 +110,10 @@ export const getProjectSchema = async (scenarioName: string = 'unknown') : Promi
 export const getPageSchema = async (scenarioName: string = 'unknown') => {
   // const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   
-  const pageSchema = await getProjectSchemaFromLocalStorage(scenarioName);
+  const pageSchema = (await getProjectSchemaFromLocalStorage(scenarioName))?.componentsTree?.[0];
 
   if (pageSchema) {
-    return pageSchema.componentsTree[0];
+    return pageSchema;
   }
 
   return DefaultPageSchema;
