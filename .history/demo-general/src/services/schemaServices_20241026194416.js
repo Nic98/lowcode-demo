@@ -23,8 +23,10 @@ export const updateProjectSchemaToDB = async (name, data) => {
 
   const pageId = 'Lowcode' + name; 
 
+
+  const componentsTree = data.componentsTree;
   const dataWithKey = {
-    pageId: pageId,
+    pageId: componentsTree[0].docId,
     pageName: name,
     projectSchema: JSON.stringify(data),
   }

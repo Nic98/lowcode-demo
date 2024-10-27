@@ -21,10 +21,12 @@ export const updateProjectSchemaToDB = async (name, data) => {
     throw new Error('Invalid project schema');
   }
 
-  const pageId = 'Lowcode' + name; 
+  const pageId = name + 
 
+
+  const componentsTree = data.componentsTree;
   const dataWithKey = {
-    pageId: pageId,
+    pageId: componentsTree[0].docId,
     pageName: name,
     projectSchema: JSON.stringify(data),
   }
