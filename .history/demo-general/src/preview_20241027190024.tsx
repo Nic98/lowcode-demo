@@ -21,15 +21,20 @@ const getScenarioName = function () {
   return 'general';
 };
 
+const getPackagesFromWindow = function () { 
+  wi
+}
+
 
 const SamplePreview = () => {
-
   const [data, setData] = useState({});
 
   async function init() {
     const scenarioName = getScenarioName();
-    const packages = await getPackagesFromLocalStorage(scenarioName);
+    const packages = getPackagesFromLocalStorage(scenarioName);
+    console.log(packages);
     const projectSchema = await getProjectSchemaFromLocalStorage(scenarioName);
+    
     const {
       componentsMap: componentsMapArray,
       componentsTree,

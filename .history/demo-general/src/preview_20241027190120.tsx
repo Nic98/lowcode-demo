@@ -24,12 +24,19 @@ const getScenarioName = function () {
 
 const SamplePreview = () => {
 
+  window.onload = function () { 
+    const messageEle = document.getElementById('packageMessage');
+    this.window.addEventListener('message', function (e) {
+  }
+
   const [data, setData] = useState({});
 
   async function init() {
     const scenarioName = getScenarioName();
-    const packages = await getPackagesFromLocalStorage(scenarioName);
+    const packages = getPackagesFromLocalStorage(scenarioName);
+    console.log(packages);
     const projectSchema = await getProjectSchemaFromLocalStorage(scenarioName);
+    
     const {
       componentsMap: componentsMapArray,
       componentsTree,

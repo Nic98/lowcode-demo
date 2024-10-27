@@ -30,6 +30,7 @@ const SamplePreview = () => {
     const scenarioName = getScenarioName();
     const packages = await getPackagesFromLocalStorage(scenarioName);
     const projectSchema = await getProjectSchemaFromLocalStorage(scenarioName);
+    
     const {
       componentsMap: componentsMapArray,
       componentsTree,

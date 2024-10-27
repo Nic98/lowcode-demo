@@ -4,8 +4,8 @@ import { Message, Dialog } from '@alifd/next';
 import { IPublicTypeProjectSchema, IPublicEnumTransformStage } from '@alilc/lowcode-types';
 import DefaultPageSchema from './defaultPageSchema.json';
 import DefaultI18nSchema from './defaultI18nSchema.json';
-import { getOneProjectSchemaFromDB, updateProjectSchemaToDB } from './schemaServices';
-import assets from './assets.json';
+import { getProjectSchemaFromDB, updateProjectSchemaToDB } from './schemaServices';
+import { stringify } from 'uuid';
 
 // done
 const generateProjectSchema = (pageSchema: any, i18nSchema: any): IPublicTypeProjectSchema => {
@@ -60,8 +60,8 @@ export const getProjectSchemaFromLocalStorage = async (scenarioName: string): Pr
     console.error('scenarioName is required!');
     return;
   }
-  
-  const localValue = JSON.parse(await getOneProjectSchemaFromDB(scenarioName));
+  // const localValue = window.localStorage.getItem(getLSName(scenarioName));
+  const localValue = JSON.parse(await getProjectSchemaFromDB(scenarioName));
   
   if (localValue) {
     return localValue as Object; // Type assertion
@@ -74,6 +74,10 @@ const setProjectSchemaToLocalStorage = (scenarioName: string) => {
     console.error('scenarioName is required!');
     return;
   }
+  // window.localStorage.setItem(
+  //   getLSName(scenarioName),
+  //   JSON.stringify(project.exportSchema(IPublicEnumTransformStage.Save))
+  // );
   updateProjectSchemaToDB(scenarioName, project.exportSchema(IPublicEnumTransformStage.Save));
 }
 
@@ -94,17 +98,11 @@ const setPackagesToLocalStorage = async (scenarioName: string) => {
   );
 }
 
-export const getPackagesFromLocalStorage = async (scenarioName: string) => {
+export const getPackagesFromLocalStorage = (scenarioName: string) => {
   if (!scenarioName) {
     console.error('scenarioName is required!');
     return;
   }
-
-  const packages = await filterPackages(assets.packages);
-  window.localStorage.setItem(
-    getLSName(scenarioName, 'packages'),
-    JSON.stringify(packages),
-  );
   return JSON.parse(window.localStorage.getItem(getLSName(scenarioName, 'packages')) || '{}');
 }
 
@@ -116,6 +114,7 @@ export const getProjectSchema = async (scenarioName: string = 'unknown') : Promi
 
 // done
 export const getPageSchema = async (scenarioName: string = 'unknown') => {
+  // const pageSchema = getProjectSchemaFromLocalStorage(scenarioName)?.componentsTree?.[0];
   
   const pageSchema = await getProjectSchemaFromLocalStorage(scenarioName);
 

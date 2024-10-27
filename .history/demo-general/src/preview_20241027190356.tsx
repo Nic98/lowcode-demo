@@ -24,12 +24,25 @@ const getScenarioName = function () {
 
 const SamplePreview = () => {
 
+  window.onload = function () { 
+    const messageEle = document.getElementById('packageMessage');
+    window.addEventListener('message', function (e) {
+      this.alert(e.origin);
+      if (e.origin !== 'http://localhost:3000') {
+        return;
+      }
+      console.log(e.data);
+    });
+  }
+
   const [data, setData] = useState({});
 
   async function init() {
     const scenarioName = getScenarioName();
-    const packages = await getPackagesFromLocalStorage(scenarioName);
+    const packages = getPackagesFromLocalStorage(scenarioName);
+    console.log(packages);
     const projectSchema = await getProjectSchemaFromLocalStorage(scenarioName);
+    
     const {
       componentsMap: componentsMapArray,
       componentsTree,

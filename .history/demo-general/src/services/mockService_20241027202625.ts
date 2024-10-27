@@ -60,7 +60,7 @@ export const getProjectSchemaFromLocalStorage = async (scenarioName: string): Pr
     console.error('scenarioName is required!');
     return;
   }
-  
+  // const localValue = window.localStorage.getItem(getLSName(scenarioName));
   const localValue = JSON.parse(await getOneProjectSchemaFromDB(scenarioName));
   
   if (localValue) {

@@ -10,7 +10,6 @@ export const getOneProjectSchemaFromDB = async (name) => {
   try {
     const response = await axios.post(API_URL_GETPAGE, { pageId: pageId });
     const resdata = response.data.data;
-    console.log('resdata:', resdata);
     return resdata[0].projectSchema;
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -35,8 +34,7 @@ export const updateProjectSchemaToDB = async (name, data) => {
     throw new Error('Invalid project schema');
   }
 
-  const pageId = 'Lowcode-' + name;
-  console.log(pageId);
+  const pageId = 'Lowcode-' + name; 
 
   const dataWithKey = {
     pageId: pageId,

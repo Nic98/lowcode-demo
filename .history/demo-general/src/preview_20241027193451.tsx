@@ -29,7 +29,9 @@ const SamplePreview = () => {
   async function init() {
     const scenarioName = getScenarioName();
     const packages = await getPackagesFromLocalStorage(scenarioName);
+    console.log(packages.then((res) => console.log(res)));
     const projectSchema = await getProjectSchemaFromLocalStorage(scenarioName);
+    
     const {
       componentsMap: componentsMapArray,
       componentsTree,
