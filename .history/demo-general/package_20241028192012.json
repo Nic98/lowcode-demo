@@ -6,7 +6,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "build-scripts start --disable-reload --port 5556 ", 
+    "start": "npm run end-with-path --",
+    "start-with-path": "node -e \"console.log('Server running at http://localhost:5556/' + process.env.PATH_SUFFIX);\" && build-scripts start --disable-reload --port 5556"
     "build": "build-scripts build",
     "prepublishOnly": "npm run build",
     "pub": "node ./scripts/watchdog.js && npm pub"

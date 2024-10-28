@@ -93,6 +93,13 @@ const SamplePreview = () => {
     }
   }
 
+  window.addEventListener('message', (e) => {
+    console.log(e);
+    if (e.origin !== 'http://localhost:8080/#/pageControl') return;
+
+    console.log(e.data);
+  });
+
   return (
 
 

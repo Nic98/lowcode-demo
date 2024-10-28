@@ -44,6 +44,7 @@ export const updateProjectSchemaToDB = async (name, data) => {
   
   try {
     const response = await axios.post(API_URL_POST, dataWithKey);
+    console.log('Success:', response.data);
     return response.data;
   } catch (error) {
     console.error('Error updating data:', error);

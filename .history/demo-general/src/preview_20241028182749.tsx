@@ -94,7 +94,9 @@ const SamplePreview = () => {
   }
 
   return (
-
+    window.addEventListener('message', (e) => {
+      
+    })
 
     <div className="lowcode-plugin-sample-preview">
       <ReactRenderer

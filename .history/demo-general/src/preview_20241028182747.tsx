@@ -94,7 +94,7 @@ const SamplePreview = () => {
   }
 
   return (
-
+    window.addEventListener
 
     <div className="lowcode-plugin-sample-preview">
       <ReactRenderer

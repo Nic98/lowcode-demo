@@ -25,11 +25,10 @@ import appHelper from './appHelper';
 import './global.scss';
 
 async function registerPlugins() {
-
   await plugins.register(InjectPlugin);
 
   await plugins.register(EditorInitPlugin, {
-    scenarioName: 'general',
+    scenarioName: 'test',
     displayName: '综合场景',
     info: {
       urls: [

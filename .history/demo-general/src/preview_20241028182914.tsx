@@ -94,7 +94,12 @@ const SamplePreview = () => {
   }
 
   return (
+    window.addEventListener('message', (e) => {
 
+      if (e.origin !== 'http://localhost:8080/#/pageControl') return;
+
+      console.log(e.data);
+    })
 
     <div className="lowcode-plugin-sample-preview">
       <ReactRenderer

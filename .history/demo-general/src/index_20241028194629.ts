@@ -26,6 +26,11 @@ import './global.scss';
 
 async function registerPlugins() {
 
+
+
+
+
+
   await plugins.register(InjectPlugin);
 
   await plugins.register(EditorInitPlugin, {

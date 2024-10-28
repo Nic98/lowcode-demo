@@ -25,7 +25,7 @@ import appHelper from './appHelper';
 import './global.scss';
 
 async function registerPlugins() {
-
+  console.log("registerPlugins")
   await plugins.register(InjectPlugin);
 
   await plugins.register(EditorInitPlugin, {

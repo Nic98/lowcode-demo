@@ -26,6 +26,20 @@ import './global.scss';
 
 async function registerPlugins() {
 
+  window.addEventListener('message', (event) => {
+    console.log('Received message from:', event.origin);
+    console.log('Event data:', event.data);
+    if (event.origin === 'http://localhost:8080') { // 确认消息来源
+        const { pageId } = event.data;
+        console.log('Received pageId:', pageId);
+        // 处理收到的 pageId
+    } else {
+        console.warn('Origin not allowed:', event.origin);
+    }
+});
+
+
+
   await plugins.register(InjectPlugin);
 
   await plugins.register(EditorInitPlugin, {

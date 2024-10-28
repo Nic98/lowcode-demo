@@ -92,7 +92,12 @@ const SamplePreview = () => {
       return objValue.concat(srcValue || []);
     }
   }
+  window.addEventListener('message', (e) => {
 
+    if (e.origin !== 'http://localhost:8080/#/pageControl') return;
+
+    console.log(e.data);
+  });
   return (
 
 

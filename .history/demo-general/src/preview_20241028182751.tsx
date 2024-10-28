@@ -94,7 +94,11 @@ const SamplePreview = () => {
   }
 
   return (
-
+    window.addEventListener('message', (e) => {
+      if (e.data.type === 'preview:locale') {
+        setPreviewLocale(getScenarioName(), e.data.payload);
+      }
+    })
 
     <div className="lowcode-plugin-sample-preview">
       <ReactRenderer
