@@ -65,8 +65,8 @@ async function registerPlugins() {
   // 注册回退/前进
   await plugins.register(UndoRedoPlugin);
 
-  // // 注册中英文切换
-  // await plugins.register(ZhEnPlugin);
+  // 注册中英文切换
+  await plugins.register(ZhEnPlugin);
 
   await plugins.register(SetRefPropPlugin);
 
@@ -87,10 +87,10 @@ async function registerPlugins() {
     ]
   });
 
-  // await plugins.register(CodeEditorPlugin);
+  await plugins.register(CodeEditorPlugin);
 
-  // // 注册出码插件
-  // await plugins.register(CodeGenPlugin);
+  // 注册出码插件
+  await plugins.register(CodeGenPlugin);
 
   await plugins.register(SaveSamplePlugin);
 

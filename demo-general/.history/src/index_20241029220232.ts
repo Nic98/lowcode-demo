@@ -65,8 +65,8 @@ async function registerPlugins() {
   // 注册回退/前进
   await plugins.register(UndoRedoPlugin);
 
-  // // 注册中英文切换
-  // await plugins.register(ZhEnPlugin);
+  // 注册中英文切换
+  await plugins.register(ZhEnPlugin);
 
   await plugins.register(SetRefPropPlugin);
 
@@ -87,10 +87,10 @@ async function registerPlugins() {
     ]
   });
 
-  // await plugins.register(CodeEditorPlugin);
+  await plugins.register(CodeEditorPlugin);
 
-  // // 注册出码插件
-  // await plugins.register(CodeGenPlugin);
+  // 注册出码插件
+  await plugins.register(CodeGenPlugin);
 
   await plugins.register(SaveSamplePlugin);
 
@@ -108,16 +108,16 @@ async function registerPlugins() {
   //
   await registerPlugins();
 
-  init(document.getElementById('lce-container')!, {
-    locale: 'zh-CN',
-    enableCondition: true,
-    enableCanvasLock: true,
-    // 默认绑定变量
-    supportVariableGlobally: true,
-    requestHandlersMap: {
-      fetch: createFetchHandler(),
-    },
-    appHelper,
-    enableContextMenu: true,
-  });
+  // init(document.getElementById('lce-container')!, {
+  //   locale: 'zh-CN',
+  //   enableCondition: true,
+  //   enableCanvasLock: true,
+  //   // 默认绑定变量
+  //   supportVariableGlobally: true,
+  //   requestHandlersMap: {
+  //     fetch: createFetchHandler(),
+  //   },
+  //   appHelper,
+  //   enableContextMenu: true,
+  // });
 })();

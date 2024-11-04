@@ -87,7 +87,7 @@ async function registerPlugins() {
     ]
   });
 
-  // await plugins.register(CodeEditorPlugin);
+  await plugins.register(CodeEditorPlugin);
 
   // // 注册出码插件
   // await plugins.register(CodeGenPlugin);
